@@ -1,10 +1,25 @@
 // For format details, see https://aka.ms/devcontainer.json
 {
 	"name": "Dockenv Fully",
-	"image": "ghcr.io/dockenv/archlinux:latest",
+	"image": "ghcr.io/dockenv/boxs:ubuntu",
 	// CodeSandBox /project Persistence Storage
 	// "workspaceFolder": "/project/${localWorkspaceFolderBasename}",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"version": "lts"
+		},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/devcontainers/features/go:1": {},
+		"ghcr.io/devcontainers/features/java:1": {
+			"installGradle": true,
+			"installMaven": true,
+			"installAnt": true
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+		"ghcr.io/devcontainers/features/nix:1": {}
+	},
 	"forwardPorts": [
 		8080,
 		3306,
@@ -28,17 +43,15 @@
 			"settings": {
 				"editor.fontSize": 16,
 				"editor.formatOnPaste": true,
-				"editor.formatOnSave": false,
+				"editor.formatOnSave": false
 			},
 			"extensions": [
-				"DEVSENSE.composer-php-vscode",
-				"ms-vscode.sublime-keybindings",
-				"ms-vscode.anycode"
+				"redhat.vscode-xml"
 			]
 		}
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "whoami",
+	"postCreateCommand": "whoami"
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "dockenv"
 }

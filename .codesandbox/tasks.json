@@ -6,7 +6,7 @@
 		"initializing": {
 			"name": "Who are you?",
 			"command": "whoami",
-			"runAtStart": true,
+			"runAtStart": false,
 			"preview": {
 				"port": 4000,
 				"prLink": "direct"
