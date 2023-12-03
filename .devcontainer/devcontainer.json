@@ -3,17 +3,13 @@
 	"name": "Dockenv Fully",
 	"image": "ghcr.io/dockenv/archlinux:latest",
 	// CodeSandBox /project Persistence Storage
-	"workspaceFolder": "/project/${localWorkspaceFolderBasename}",
+	// "workspaceFolder": "/project/${localWorkspaceFolderBasename}",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"forwardPorts": [
 		8080,
 		3306,
 		1433
 	],
-	// 
-	"hostRequirements": {
-		"cpus": 1,
-		"memory": "2gb"
-	},
 	// CodeSandbox Not Suport, replace it with .codesandbox/tasks.json
 	"portsAttributes": {
 		"8080": {
