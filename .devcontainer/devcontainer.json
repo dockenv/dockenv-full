@@ -1,0 +1,48 @@
+// For format details, see https://aka.ms/devcontainer.json
+{
+	"name": "Dockenv Fully",
+	"image": "ghcr.io/dockenv/archlinux:latest",
+	// CodeSandBox /project Persistence Storage
+	"workspaceFolder": "/project/${localWorkspaceFolderBasename}",
+	"forwardPorts": [
+		8080,
+		3306,
+		1433
+	],
+	// 
+	"hostRequirements": {
+		"cpus": 1,
+		"memory": "2gb"
+	},
+	// CodeSandbox Not Suport, replace it with .codesandbox/tasks.json
+	"portsAttributes": {
+		"8080": {
+			"label": "Web Server Port"
+		},
+		"3306": {
+			"label": "MYSQL/Mariadb Port"
+		},
+		"1433": {
+			"label": "MSSQL Port"
+		}
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.fontSize": 16,
+				"editor.formatOnPaste": true,
+				"editor.formatOnSave": false,
+			},
+			"extensions": [
+				"DEVSENSE.composer-php-vscode",
+				"ms-vscode.sublime-keybindings",
+				"ms-vscode.anycode"
+			]
+		}
+	},
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "whoami"
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "dockenv"
+}
