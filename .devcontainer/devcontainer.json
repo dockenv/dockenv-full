@@ -1,25 +1,10 @@
 // For format details, see https://aka.ms/devcontainer.json
 {
 	"name": "Dockenv Fully",
-	"image": "ghcr.io/dockenv/boxs:ubuntu",
-	// CodeSandBox /project Persistence Storage
+	"image": "ghcr.io/dockenv/boxs:devbox",
+	// CodeSandBox /project Persistence Storage, variable not support
 	// "workspaceFolder": "/project/${localWorkspaceFolderBasename}",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"features": {
-		"ghcr.io/devcontainers/features/node:1": {
-			"nodeGypDependencies": true,
-			"version": "lts"
-		},
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
-		"ghcr.io/devcontainers/features/go:1": {},
-		"ghcr.io/devcontainers/features/java:1": {
-			"installGradle": true,
-			"installMaven": true,
-			"installAnt": true
-		},
-		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
-		"ghcr.io/devcontainers/features/nix:1": {}
-	},
+	// "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"forwardPorts": [
 		8080,
 		3306,
